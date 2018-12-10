@@ -120,7 +120,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-       url: "https://facebook.com/PG.blurr"
+       link: "https://facebook.com/PG.blurr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
        link: "https://github.com/puneetkg"
