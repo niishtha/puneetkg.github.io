@@ -1,2 +1,2 @@
 # puneetkg.github.io
-My Portfoio
+My Portfolio
