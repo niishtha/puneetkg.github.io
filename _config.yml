@@ -123,7 +123,7 @@ author:
        url: "https://facebook.com/PG.blurr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-       url: "https://github.com/puneetkg"
+       link: "https://github.com/puneetkg"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
