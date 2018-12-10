@@ -106,7 +106,7 @@ author:
   name             : "Puneet Gupta"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "My Portfolio"
-  location         : "Bangalore, KA, India"
+  location         : "Bangalore, KA"
   email            :
   links:
     - label: "Email"
@@ -120,10 +120,10 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-       url: "https://facebook.com/PG.blurr"
+       url: https://facebook.com/PG.blurr
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-       url: "https://github.com/puneetkg"
+       url: https://github.com/puneetkg
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
