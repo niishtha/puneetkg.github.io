@@ -105,13 +105,13 @@ analytics:
 author:
   name             : "Puneet Gupta"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "My Portfolio"
+  bio              : "I am a to be Data Scientist who is a Senior Business Analyst"
   location         : "Bangalore, KA"
   email            : "samparkpuneet@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "<mailto:samparkpuneet@gmail.com>"
+      # url: mailto:your.name@email.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -136,10 +136,10 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/PG.blurr"
+      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/puneetkg"
+      # url:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -291,11 +291,10 @@ defaults:
       share: true
       related: true
 
-
   # _pages
   - scope:
       path: ""
-      type: pages
-  values:
+      type: Pages
+    values:
       layout: single
       author_profile: true
