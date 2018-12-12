@@ -136,10 +136,10 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/PG.blurr"
+      # url: "https://facebook.com/PG.blurr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/puneetkg"
+      # url: "https://github.com/puneetkg"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -280,7 +280,7 @@ compress_html:
 # Defaults
 defaults:
   # _posts
-  - scope:
+   - scope:
       path: ""
       type: posts
     values:
