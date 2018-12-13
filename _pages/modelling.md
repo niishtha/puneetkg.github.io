@@ -4,8 +4,7 @@ permalink: /modelling/
 title: "Machine learning posts by tags"
 author_profile: true
 header:
- image: "/images/header_2.png"
- object-fit: contain
+ image: "/images/header_2.jpg"
 ---
 
 
