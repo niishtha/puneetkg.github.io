@@ -2,7 +2,7 @@
 layout: splash
 
 permalink: /podcast/
-title: "Machine learning posts by tags"
+title: "Machine learning Projects by tags"
 author_profile: true
 header:
  image: "/images/podcast.jpeg"

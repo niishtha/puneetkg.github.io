@@ -2,8 +2,8 @@
 title: "About"
 permalink: /about/
 header:
-  image:"/images/header_1.png"
-
+  image:"/images/header_3.png"
+author_profile: true
 ---
 
 I am a Senior Business Analyst, with extensive experience in applying machine learning to advance business and Product. I like to solve problems through data.
