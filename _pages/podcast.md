@@ -9,6 +9,3 @@ author_profile: true
 header:
  image: "/images/podcast.jpeg"
 ---
-
-
-Coming Soon!!!!
