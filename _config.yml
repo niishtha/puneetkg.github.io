@@ -104,7 +104,7 @@ analytics:
 # Site Author
 author:
   name             : "Puneet Gupta"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/Puneet.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am a to be Data Scientist who is a Senior Business Analyst"
   location         : "Bangalore, KA"
   email            : "samparkpuneet@gmail.com"
@@ -127,6 +127,11 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "Resume"
+      icon: "fas fa-align-justify"
+      url: "https://docs.google.com/document/d/1OOF13BHJR4bSKmXz4U8PpBmF48tJCVjNLb0uwi6KkIc/edit#heading=h.ymi089liagec"
+
+
 
 # Site Footer
 footer:
@@ -136,10 +141,10 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://facebook.com/PG.blurr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/puneetkg"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
