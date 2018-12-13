@@ -4,7 +4,7 @@ permalink: /modelling/
 title: "Machine learning posts by tags"
 author_profile: true
 header:
- image: "/images/titanic.png"
+ image: "/images/titanic.png"{ width=50% }
 ---
 
 
