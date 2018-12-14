@@ -1,8 +1,6 @@
 ---
-layout: splash
-
 permalink: /podcast/
-title: "Machine learning Projects by tags"
+title: "Podcast on data science, Coming Soon!" #Data science in a hurry
 author_profile: true
 header:
  image: "/images/podcast.jpeg"
