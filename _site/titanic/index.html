@@ -314,7 +314,7 @@
 
 
 
-  6 minute read
+  7 minute read
 </p>
           
         </header>
@@ -328,13 +328,11 @@
 
 <h2 id="introduction">Introduction:</h2>
 
-<p>aaa</p>
-
-<h2 id="classifying-survivors">Classifying survivors:</h2>
-<p>aaa</p>
+<p>Kaggle has created a number of competitions designed for beginners. The most popular of these competitions, and the one we’ll be looking at, is about predicting which passengers survived the sinking of the Titanic. If you are a beginner in data science you probably have already heard about this.
+We will be understanding on how to use different ML techniques, choosing the best performing model, then optimising the best performing model further to improve our predictions. Let’s get started</p>
 
 <h2 id="importing-libraries">Importing Libraries:</h2>
-<p>importing libraries</p>
+<p>Importing libraries</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># linear algebra
 </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
@@ -427,24 +425,72 @@
 
 </code></pre></div></div>
 
-<h3 id="2">2.</h3>
+<h3 id="2-bucketing-age">2. Bucketing Age</h3>
 
-<p>aaa</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">11</span><span class="p">,</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">18</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">22</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">22</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">27</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">27</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">33</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">33</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">66</span><span class="p">),</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">66</span><span class="p">,</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
 
-<h3 id="3">3.</h3>
+</code></pre></div></div>
 
-<p>aaa</p>
+<h3 id="3-sex">3. Sex</h3>
 
-<h3 id="4">4.</h3>
+<p>Converting sex into a numeric variable</p>
 
-<p>aaa</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">genders</span> <span class="o">=</span> <span class="p">{</span><span class="s">"male"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"female"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
 
-<h3 id="5">5.</h3>
+<span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Sex'</span><span class="p">]</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">genders</span><span class="p">)</span>
 
-<p>aaaa</p>
 
-<h3 id="6">6.</h3>
-<p>aaaa</p>
+<span class="c1">### 4. Fare
+</span>
+<span class="n">Using</span> <span class="n">the</span> <span class="s">"qcut()"</span> <span class="n">function</span><span class="p">,</span> <span class="n">that</span> <span class="n">we</span> <span class="n">can</span> <span class="n">use</span> <span class="n">to</span> <span class="n">see</span><span class="p">,</span> <span class="n">how</span> <span class="n">we</span> <span class="n">can</span> <span class="n">form</span> <span class="n">the</span> <span class="n">categories</span><span class="o">.</span>
+
+<span class="sb">``</span><span class="err">`</span><span class="n">python</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">7.91</span><span class="p">,</span> <span class="s">'Fare'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">7.91</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">14.454</span><span class="p">),</span> <span class="s">'Fare'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">14.454</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">31</span><span class="p">),</span> <span class="s">'Fare'</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">31</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">99</span><span class="p">),</span> <span class="s">'Fare'</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">99</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">250</span><span class="p">),</span> <span class="s">'Fare'</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">,</span> <span class="s">'Fare'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="5-embarked">5. Embarked</h3>
+
+<p>This column has only 2 values, we will simply fill ‘NAs’ with the most frequent value that occurs in this column.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_df</span><span class="p">[</span><span class="s">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="n">common_value</span> <span class="o">=</span> <span class="s">'S'</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Embarked'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">common_value</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="new-features">New features</h2>
+
+<h3 id="fare-per-person">Fare per person</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare_Per_Person'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'relatives'</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare_Per_Person'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Fare_Per_Person'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="c1">##looking at the dataset
+</span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="feature-engineering">Feature Engineering</h2>
 
