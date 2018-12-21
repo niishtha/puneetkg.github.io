@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /modelling/
-title: "Machine learning posts by tags"
+title: "Machine Learning Posts by tags"
 author_profile: true
 header:
  overlay_image: "/images/header_2.jpg"

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Data Science Podcast(Coming Soon!)"
+title: "Data Science Podcast"
 permalink: /podcast/
 header:
   overlay_image: "/images/podcast.jpeg"

@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /learning/
-title: "machine Learning posts for learning"
+title: "Machine Learning Posts for Learning"
 author_profile: true
 header:
  overlay_image: "/images/header_4.jpg"
