@@ -303,3 +303,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+  # _learningposts
+  - scope:
+      path: ""
+      type: Pages
+    values:
+      layout: single
+      author_profile: true

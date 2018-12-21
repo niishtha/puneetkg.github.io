@@ -6,6 +6,8 @@ main:
     url: /modelling/
   - title: "Podcast"
     url: /podcast/
+  - title: "Learning"
+    url: /learning/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
