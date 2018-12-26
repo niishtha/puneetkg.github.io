@@ -7,6 +7,6 @@ header:
  overlay_image: "/images/header_2.jpg"
 ---
 
-{% for post in site.learningposts %}
+{% for post in site.posts %}
   {% include archive-single.html %}
 {% endfor %}
