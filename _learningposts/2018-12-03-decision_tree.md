@@ -1,5 +1,5 @@
 ---
-title: "Understanding Decision Trees in Python"
+title: "Decision Trees in Python"
 date: 2018-12-03
 tags: [Machine Learning,Data science]
 header:

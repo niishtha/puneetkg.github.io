@@ -4,8 +4,7 @@ permalink: /learning/
 title: "Learning Machine Learning in Python"
 author_profile: true
 header:
- overlay_image: "/images/header_4.jpg"
- overlay_filter: 0.8
+ overlay_image: "/images/learning.jpg"
 ---
 
 {% for post in site.learningposts %}

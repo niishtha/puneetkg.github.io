@@ -1,5 +1,5 @@
 ---
-title: "Understanding Preprocessing in Python"
+title: "Preprocessing in Python"
 date: 2018-11-30
 tags: [Machine Learning,Data science]
 header:

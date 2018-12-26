@@ -1,5 +1,5 @@
 ---
-title: "Understanding Random Forests in Python"
+title: "Random Forests in Python"
 date: 2018-12-04
 tags: [Machine Learning,Data science]
 header:

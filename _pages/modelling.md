@@ -1,10 +1,10 @@
 ---
 layout: archive
 permalink: /modelling/
-title: "Machine Learning Posts by tags"
+title: "ML Challenges Code"
 author_profile: true
 header:
- overlay_image: "/images/header_2.jpg"
+ overlay_image: "/images/header_image.png"
 ---
 
 {% for post in site.posts %}
