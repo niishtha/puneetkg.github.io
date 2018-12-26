@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /learning/
-title: "Machine Learning Posts for Learning"
+title: "Learning Machine Learning in Python"
 author_profile: true
 header:
  overlay_image: "/images/header_4.jpg"
